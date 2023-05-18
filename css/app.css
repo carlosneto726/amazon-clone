@@ -1,0 +1,131 @@
+body{
+    background-color: #E3E6E6;
+    color: #000000;
+}
+
+.navbar{
+    background-color: #131921;
+    color: #FFFFFF;
+}
+
+.navbar .navbar-brand, .navbar .nav-link{
+    color: #FFFFFF;
+    border: solid 1px #131921;
+}
+
+.navbar-brand:hover, .nav-link:hover{
+    color: #FFFFFF !important;
+    border-color:white;
+}
+
+
+
+.navbar-bottom{
+    background-color: #232F3E;
+    color: #FFFFFF;
+}
+.navbar-bottom .navbar-brand, .navbar-bottom .nav-link{
+    color: #FFFFFF;
+    border: solid 1px #232F3E;
+}
+.navbar-bottom .nav-link:hover{
+    color: #FFFFFF !important;
+    border-color:white;
+}
+
+
+.carousel .carousel-control-prev .carousel-control-prev-icon{
+    margin-top: -355px !important;
+    margin-left: 190px !important;
+}
+
+.carousel .carousel-control-next .carousel-control-next-icon{
+    margin-top: -355px !important;
+    margin-left: -190px !important;
+}
+
+.carousel .carousel-control-prev .carousel-control-prev-icon, .carousel .carousel-control-next .carousel-control-next-icon{
+    filter: invert(100%);
+}
+
+.produtos-input{
+    all: unset;
+}
+
+
+#imagem_produto{
+    object-fit: contain;
+    width: 100% !important;
+    height: 200px !important;
+}
+
+#imagem_produto_pagina{
+    object-fit: contain;
+    height: 680px !important;
+    width: 100% !important;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.titulo-pagina{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+.grid-container {
+    margin-top: 350px;
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+
+
+.grid-container-categoria {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+
+.carrinho{
+    background-color: white;
+    width: 1280px;
+    margin-top: 200px;
+    margin-left: 150px;
+    padding: 20px;
+
+
+
+}
