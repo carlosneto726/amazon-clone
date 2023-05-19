@@ -56,17 +56,13 @@ CREATE TABLE tb_carrinho(
 CREATE TABLE tb_vendas(
 	id int NOT NULL AUTO_INCREMENT,
 	id_usuario int NOT NULL,
-	id_carrinho int NOT NULL,
-	id_loja int NOT NULL,
 	preco_total float,
 
 	data date,
 	status char,
 
 	PRIMARY KEY	(id),
-	FOREIGN KEY(id_usuario) REFERENCES tb_usuarios(id),
-	FOREIGN KEY(id_carrinho) REFERENCES tb_carrinho(id),
-	FOREIGN KEY(id_loja) REFERENCES tb_lojas(id)
+	FOREIGN KEY(id_usuario) REFERENCES tb_usuarios(id)
 
 );
 

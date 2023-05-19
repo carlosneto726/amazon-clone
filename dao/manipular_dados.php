@@ -30,6 +30,9 @@ class manipular_dados extends conexao{
     }
 
 
+    // Insere uma linha na tabela especificada com setTable('tabela');
+    // com os campos definidos pelo setFields("'col1','col2','col3'");
+    // e com os dados definidos pelo setDados("'val1', 'val2', 'val3'");
     public function insert(){
         $this->sql = "INSERT INTO $this->table($this->fields) VALUES ($this->dados);";
 
@@ -40,6 +43,7 @@ class manipular_dados extends conexao{
         }
     }
 
+    // Retorna uma lista com todos os item da tabela definica pelo setTable('tabela')
     public function getAllDataTable(){
         $this->sql = "SELECT * FROM $this->table;";
         $this->qr = self::exeSQL($this->sql);
@@ -54,6 +58,7 @@ class manipular_dados extends conexao{
     }
 
 
+    // Retorna uma lista com todos os produtos com a categoria especificada
     public function getProdutosPorCategoria($categoria){
         $this->sql = "SELECT * FROM $this->table WHERE categoria = '".$categoria."';";
         $this->qr = self::exeSQL($this->sql);
@@ -67,6 +72,8 @@ class manipular_dados extends conexao{
         return $listaresp;
     }
 
+
+    // Retorna os produtos com o id especificado
     public function getProdutosPorID($id){
         $this->sql = "SELECT * FROM tb_produtos WHERE id = $id;";
         $this->qr = self::exeSQL($this->sql);
@@ -80,6 +87,7 @@ class manipular_dados extends conexao{
         return $listaresp;
     }
 
+    // Retorna uma lista de lojas do id espeficicado
     public function getLojaByProdutoID($id){
         $this->sql = "SELECT * FROM tb_lojas WHERE id = $id;";
         $this->qr = self::exeSQL($this->sql);
@@ -94,6 +102,7 @@ class manipular_dados extends conexao{
     }
 
 
+    // Retorna a quantidade de usuários com o email e a senha especificada (caso seja 0, não existe o usuário)
     public function validarLogin($email, $senha){
 
         $this->sql = "SELECT * FROM tb_usuarios WHERE email ='$email' and senha ='$senha'";
@@ -103,6 +112,7 @@ class manipular_dados extends conexao{
     }
 
 
+    // Retorna o carrinho de um id de um usuário especificado
     public function getCarrinho($id){
 
         $this->sql = "SELECT * FROM tb_carrinho WHERE id_usuario = $id";
@@ -118,14 +128,19 @@ class manipular_dados extends conexao{
     }
 
 
-
+    // Deleta um produto especifico de um carrinho pelo o id de um produto do carrinho
     public function dellProdutoCarrinho($id_carrinho){
         $this->sql = "DELETE FROM tb_carrinho WHERE id = $id_carrinho;";
         $this->qr = self::exeSQL($this->sql);
     }
 
+    // Deleta todos os produtos do carrinho especificando o id de um usuário
+    public function dellAllProdutosCarrinho($id){
+        $this->sql = "DELETE FROM tb_carrinho WHERE id_usuario = $id;";
+        $this->qr = self::exeSQL($this->sql);
+    }
 
-
+    // Retorna uma lista de usuários com o email especificado
     public function getIdByEmail($email){
 
         $this->sql = "SELECT * FROM tb_usuarios WHERE email = '".$email."'";
@@ -140,7 +155,11 @@ class manipular_dados extends conexao{
         return $listaresp;
     }
 
-
+    // Atualizando a quantidade de produtos no banco de dados
+    public function updateProduto($id, $qtd){
+        $this->sql = "UPDATE tb_produtos SET qtd = '".$qtd."' WHERE id = $id ;";
+        $this->qr = self::exeSQL($this->sql);
+    }
 
 }
     
