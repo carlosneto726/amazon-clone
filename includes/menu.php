@@ -20,7 +20,7 @@ $isset = IsSet($_COOKIE['email']);
 
             <div class="nav-item">
                 <div class="input-group">
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" action="secoes/pesquisa.php" method="GET">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Todos
@@ -32,7 +32,7 @@ $isset = IsSet($_COOKIE['email']);
                         </ul>
                     </div>
 
-                    <input class="form-control" style="width:1045px;" type="search" placeholder="Pesquisa AmazonClone.com.br" aria-label="Search">
+                    <input class="form-control" style="width:1045px;" type="search" placeholder="Pesquisa AmazonClone.com.br" aria-label="Search" name="pesquisa">
                     <button class="btn btn" style="background-color:#FEBD69;color:black;" type="submit"><img src="img/icons/search.svg"></button>
                 </form>
                 </div>

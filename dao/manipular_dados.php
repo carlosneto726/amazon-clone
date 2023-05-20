@@ -161,6 +161,23 @@ class manipular_dados extends conexao{
         $this->qr = self::exeSQL($this->sql);
     }
 
+
+    // Retorna uma lista de produtos com o nome especificado
+    public function getPesquisa($str){
+
+        $this->sql = "SELECT * FROM tb_produtos WHERE titulo like '%".$str."%';";
+        $this->qr = self::exeSQL($this->sql);
+
+        $listaresp = array();
+
+        while($row = @mysqli_fetch_assoc($this->qr)){
+            array_push($listaresp, $row);
+        }
+        
+        return $listaresp;
+        
+    }
+
 }
     
 ?>
