@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+
 $isset = IsSet($_COOKIE['email']);
 
 ?>
@@ -20,7 +21,7 @@ $isset = IsSet($_COOKIE['email']);
 
             <div class="nav-item">
                 <div class="input-group">
-                <form class="d-flex" role="search" action="secoes/pesquisa.php" method="GET">
+                <form class="d-flex" role="search" action="?secao=pesquisa" method="POST">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Todos
