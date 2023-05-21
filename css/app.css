@@ -119,6 +119,26 @@ input[type="file"] {
 }
 
 
+.grid-container-pesquisa {
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+.sidenav{
+    width: 100%;
+    max-height: 678px;    
+    max-width: 375px;
+    margin-left: 87px;
+    padding: 20px;
+
+
+    border-radius: 10px;
+}
+
 .carrinho{
     background-color: white;
     width: 1280px;
