@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-
+// Variavel que retorna um boolean caso o usuário esteja logado = true, deslogado = false
 $isset = IsSet($_COOKIE['email']);
 
 ?>
@@ -39,7 +39,9 @@ $isset = IsSet($_COOKIE['email']);
                 </div>
             </div>
             
-            <?php if($isset){?>
+            <?php 
+            // Caso o usuario esteja logado, irá aparecer o dropdown com os botões
+            if($isset){?>
 
 
             <div class="dropdown nav-item ms-2">
@@ -55,7 +57,9 @@ $isset = IsSet($_COOKIE['email']);
 
 
 
-            <?php }else{ ?>
+            <?php
+            // Caso não aparecerá apenas o botão de login
+            }else{ ?>
 
 
                 <div class="nav-item ms-2">
