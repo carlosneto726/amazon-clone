@@ -15,6 +15,7 @@
     
     <center><a href="../../index.php"><img src="../../img/icons/amazonblack_logo.svg" class="mt-3 mb-3" style="height:35px;"></a></center>
 
+    <!-- Card para fazer o login -->
     <div class="container card" style="max-width:350px; color:black;">
         <div class="card-body">
         <h4>Fazer login</h4>
@@ -32,7 +33,6 @@
                         </div>
 
                         <button type="submit" class="btn btn w-100 mt-3" style="background-color:#FFD814;">Fazer login</button>
-                        
                     </form>
                 </div>
                 </p>
@@ -49,12 +49,16 @@
     </center>
 
 
+    <!-- Botão para o usuário cadastrar uma conta -->
     <center>
         <form method="post" action="adm/cadusuario.php">
+
+            <!-- Parte do Pedro -->
             <button type="submit" class="btn btn w-100 mt-3" style="max-width:350px; border:solid 1px black;">Criar a sua conta da Amazon</button>
         </form>
     </center>
 
+    <!-- Rodapé -->
     <img src="../../img/rodape_login.png" alt="">
 
 
