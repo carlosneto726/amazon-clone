@@ -1,6 +1,6 @@
 
 <div>
-
+    <!-- Carousel -->
     <div id="carouselExampleCaptions" class="z-n1 position-absolute carousel slide fixed-top" style="margin-top:100px;">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -31,7 +31,7 @@
 
 
 
-
+    <!-- Produtos formatados em forma de grid 4 col -->
     <div class="grid-container">
         <?php 
 
@@ -64,6 +64,7 @@
 
 
 
+    <!-- Listagem de produtos em organizados por categoria -->
     <?php 
         $categorias = new manipular_dados();
         $categorias->setTable("tb_categorias");
