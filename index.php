@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="css/app.css?v=<?php echo time();?>" id="appcss">
+    <!-- Logo da amazon na guia do navegador -->
     <link rel="icon" href="img/icons/amazon_a.svg">
     <title>AmazonClone.com.br | Tudo pra você, de A a Z.</title>
 </head>
@@ -19,10 +20,11 @@
 
 
     <nav class="fixed-top">
+        <!-- Navbar superior, a navbar que contem a barra de pesquisa e a logo do produto -->
         <div class="navbar navbar-expand-lg" style="height: 60px;">
             <?php include("includes/menu.php"); ?>
         </div>
-            
+        <!-- Navbar inferior, a navbar que é mais escura e contem algumas listagem de categorias -->
         <div class="navbar-bottom navbar-expand-lg" style="height: 40px;">
             <?php include("includes/menu_bottom.php"); ?>
         </div>
