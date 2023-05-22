@@ -2,6 +2,7 @@
     include_once("dao/manipular_dados.php");
     $manipula = new manipular_dados();
 
+    // Post da pesquisa do menu
     $pesquisa = $_POST['pesquisa'];
 ?>
 
@@ -11,13 +12,17 @@
 
 
 <div class="hstack">
-
+    <!-- Sidenav -->
     <div style="width:420px; height: 100%;">
         <p style="margin-left: 60px;">
             <span class="fw-bold">Avaliação do Cliente</span> <br>
+                <!-- 1 estrela e acima -->
                 <img src="img/icons/star-fill.svg"><img src="img/icons/star.svg"><img src="img/icons/star.svg"><img src="img/icons/star.svg"><img src="img/icons/star.svg"> e acima <br>
+                <!-- 2 estrela e acima -->
                 <img src="img/icons/star-fill.svg"><img src="img/icons/star-fill.svg"><img src="img/icons/star.svg"><img src="img/icons/star.svg"><img src="img/icons/star.svg"> e acima <br>
+                <!-- 3 estrela e acima -->
                 <img src="img/icons/star-fill.svg"><img src="img/icons/star-fill.svg"><img src="img/icons/star-fill.svg"><img src="img/icons/star.svg"><img src="img/icons/star.svg"> e acima <br>
+                <!-- 4 estrela e acima -->
                 <img src="img/icons/star-fill.svg"><img src="img/icons/star-fill.svg"><img src="img/icons/star-fill.svg"><img src="img/icons/star-fill.svg"><img src="img/icons/star.svg"> e acima <br>
 
                 <br>
@@ -34,12 +39,14 @@
 
     <div class="grid-container-pesquisa" >
 
+    <!-- Listagem dos produtos contendo a pesquisa -->
     <?php
-
         foreach($manipula->getPesquisa($pesquisa) as $produto){
             ?>  
 
+            <!-- Card dos produtos -->
             <div class='card border-light rounded-0' style='width: 350px; height: 420px;'>
+                <!-- O card inteiro está dentro da tag <a> para redirecionar o usuario para a pagina do produto -->
                 <a href="?secao=produto&produtoid=<?= $produto['id']?>&produtocategoria=<?= $produto['categoria']?>" class='card-body text-decoration-none'>
 
                     <h5 class="fw-bold" style="font-family: sans-serif !important; color: black;"><?= $produto['titulo']?></h5>
