@@ -3,21 +3,26 @@
 <?php 
 include_once('dao/manipular_dados.php');
 $manipula = new manipular_dados();
+
+// Pegando do banco de dados o produto com o id do get
 $produto = $manipula->getProdutosPorID($_GET['produtoid']);
 ?>
 
 <script>
+    // Script apenas para trocar o fundo para branco, fiz isso para ser igual o site da Amazon original
     var body = document.getElementById("body");
     body.style = "background-color: white;";
 </script>
 
-<div class="produtos" style="margin-top: 150px; margin: 200px;">
 
+<div class="produtos" style="margin-top: 150px; margin: 200px;">
+    <!-- O hstack posiciona os elementos horizontalmente, como se fosse um dispay inline -->
     <div class="hstack gap-3">
         <div class="ms-2 me-2" style="max-width: 680px; max-height: 680px;">
             <img src="<?= $produto[0]['img_url'] ?>" id="imagem_produto_pagina">
         </div>
         
+        <!-- Div para o produto -->
         <div class="p-2">
             <h5 class="fw-bold"><?= $produto[0]['titulo']?></h5>
             <br>
@@ -43,6 +48,7 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
             </p>
         </div>
 
+        <!-- Card mais a direita com os botões de adicionar produto ao carrinho e comprar -->
         <div class="ms-2 me-2 rounded-2" style="border:solid 1px #D5D9D9; width: 245px; height: 530px;">
             <form action="adm/carrinho/adicionar_carrinho.php" method="POST">
 
@@ -59,8 +65,9 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
                 <br>
 
                 <center>
-                    
+                    <!-- Botão de adicionar ao carrinho -->
                     <button class="btn btn rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button>
+                    <!-- Botão de compar agora -->
                     <button class="btn btn rounded-5 mt-3" style="background-color:#FFA41C; color:black; width: 200px;" type="submit">Comprar agora</button>
                     <br>
                     <br>
@@ -71,8 +78,10 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
         </div>
     </div>
 
+    <!-- Horizontal Rule (Linha vertical para separar a seção do produto com a listagem de produtos relacionados) -->
     <hr style="width:1465px;">
 
+    <!-- Listagem de produtos relacionados -->
     <h4 class="fw-bold mt-2 ms-2">Produtos relacionados</h4>
         <div class="grid-container-categoria">
             <?php 
@@ -90,5 +99,4 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
             ?>
 
         </div>
-
 </div>
