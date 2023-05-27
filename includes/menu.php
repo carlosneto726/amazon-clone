@@ -40,13 +40,16 @@ $isset = IsSet($_COOKIE['email']);
             </div>
             
             <?php 
+            include_once("dao/manipular_dados.php");
+
+            $manipula = new manipular_dados();
             // Caso o usuario esteja logado, irá aparecer o dropdown com os botões
             if($isset){?>
 
 
             <div class="dropdown nav-item ms-2">
                 <a class="nav-link fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo "Olá ".explode('@', $_COOKIE['email'], -1)[0]; ?>
+                    <?php echo "Olá ".   $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome']    ?>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Sua conta</a></li>
@@ -56,18 +59,6 @@ $isset = IsSet($_COOKIE['email']);
             </div>
 
 
-
-            <?php
-            // Caso não aparecerá apenas o botão de login
-            }else{ ?>
-
-
-                <div class="nav-item ms-2">
-                    <a class="nav-link fw-bold" aria-current="page" href="<?php echo "adm/login/login.php"; ?>">Login</a>
-                </div>
-
-            <?php } ?>
-
             <div class="nav-item ms-2">
                 <a class="nav-link fw-bold" aria-current="page" href="#">Pedidos</a>
             </div>
@@ -75,6 +66,26 @@ $isset = IsSet($_COOKIE['email']);
             <div class="nav-item ms-2">
                 <a class="nav-link fw-bold" aria-current="page" href="?secao=carrinho"><img src="img/icons/cart.svg"> Carrinho</a>
             </div>
+
+            <?php
+            // Caso não aparecerá apenas o botão de login
+            }else{ ?>
+
+
+                <div class="nav-item ms-2">
+                    <a class="nav-link fw-bold" aria-current="page" href="adm/login/login.php">Login</a>
+                </div>
+
+                <div class="nav-item ms-2">
+                    <a class="nav-link fw-bold" aria-current="page" href="adm/login/login.php">Pedidos</a>
+                </div>
+
+                <div class="nav-item ms-2">
+                    <a class="nav-link fw-bold" aria-current="page" href="adm/login/login.php"><img src="img/icons/cart.svg"> Carrinho</a>
+                </div>
+
+            <?php } ?>
+
 
         </div>
     </div>
