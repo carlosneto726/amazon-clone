@@ -66,9 +66,9 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
 
                 <center>
                     <!-- Botão de adicionar ao carrinho -->
-                    <button class="btn btn rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button>
+                    <button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button>
                     <!-- Botão de compar agora -->
-                    <button class="btn btn rounded-5 mt-3" style="background-color:#FFA41C; color:black; width: 200px;" type="submit">Comprar agora</button>
+                    <button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5 mt-3" style="background-color:#FFA41C; color:black; width: 200px;" type="submit">Comprar agora</button>
                     <br>
                     <br>
                     Enviado por <?= $manipula->getLojaByProdutoID($produto[0]['id_loja'])[0]['nome']?><br>
