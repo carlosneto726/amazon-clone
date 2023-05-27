@@ -79,9 +79,9 @@
         foreach($categorias->getAllDataTable() as $categoria){
     ?>
 
-        <div style="max-width: 1460px; width: auto; height: 285px; margin-left: 220px; margin-top: 20px; background-color: white;">
+        <div class="categoria" style="max-width: 1460px; width: auto; margin-left: 220px; margin-top: 20px; background-color: white;">
             <h4 class="fw-bold mt-2 ms-2"><?= $categoria['nome'] ?></h4>
-            <div class="grid-container-categoria">
+            <div class="produto-categoria">
                 <?php 
 
                     $produtos = new manipular_dados();
