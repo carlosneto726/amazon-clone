@@ -7,7 +7,7 @@
 ?>
 
 
-<h5 style="margin-top: 120px; margin-left:420px;">Exibindo resultados para <span class="fw-bold"><?= $pesquisa ?>.</span></h5>
+<h5 style="margin-top: 120px; margin-left:420px;">Exibindo resultados para '<span class="fw-bold"><?= $pesquisa ?></span>'.</h5>
 <h4 class="fw-bold" style="margin-left:420px;">Resultados</h4>
 
 
