@@ -31,29 +31,37 @@
 
 
 
-    <!-- Produtos formatados em forma de grid 4 col -->
+    <!-- Os produtos com as maiores estrelas -->
     <div class="grid-container">
         <?php 
-
+            $i = 0;
             $consulta = new manipular_dados();
             $consulta->setTable("tb_produtos");
-            foreach($consulta->getAllDataTable() as $produto){
+            foreach($consulta->getProdutosOrderByEstrelas() as $produto){
+
+                // Limitador de produtos que aparecem na home (limita para apenas 8 produtos)
+                $i++;
+                if($i > 8){
+                    break;
+                }
+                
         ?>
 
             <div class='card border-light rounded-0' style='width: 350px; height: 420px;'>
                 <div class='card-body'>
+                    <!-- Todo o conteudo do car está em um link para o usuário poder acessar a página do produto -->
+                    <a href="?secao=produto&produtoid=<?= $produto['id']?>&produtocategoria=<?= $produto['categoria']?>" class='card-body text-decoration-none'>
+                        <h5 class="fw-bold" style="font-family: sans-serif !important; color: black;"><?= $produto['titulo']?></h5>
 
-                    <h5 class="fw-bold" style="font-family: sans-serif !important; color: black;"><?= $produto['titulo']?></h5>
+                        <div class='img'>
+                            <img src="<?= $produto['img_url'] ?>" id="imagem_produto" style="height: 230px !important;">
+                        </div>
 
-                    <div class='img'>
-                        <img src="<?= $produto['img_url'] ?>" id="imagem_produto" style="height: 230px !important;">
-                    </div>
+                        <br>
 
-                    <br>
-
-                    <h6 class="card-subtitle mb-2 text-body-secondary"><?= $produto['preco']?></h6>
-                    <p class="card-text text-truncate"><?= $produto['descricao']?></p>
-                    
+                        <h6 class="card-subtitle mb-2 text-body-secondary"><?= $produto['preco']?></h6>
+                        <p class="card-text text-truncate"><?= $produto['descricao']?></p>
+                    </a>
                 </div>
             </div>
 
