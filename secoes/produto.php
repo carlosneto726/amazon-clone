@@ -4,7 +4,7 @@
 include_once('dao/manipular_dados.php');
 $manipula = new manipular_dados();
 
-// Pegando do banco de dados o produto com o id do get
+// Pegando do banco de dados o produto com o id do GET
 $produto = $manipula->getProdutosPorID($_GET['produtoid']);
 ?>
 
@@ -65,9 +65,9 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
                 <br>
 
                 <center>
-                    <!-- Botão de adicionar ao carrinho -->
+                    <!-- Botão de adicionar ao carrinho, é desabilitado caso o produto não esteja em estoque -->
                     <button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button>
-                    <!-- Botão de compar agora -->
+                    <!-- Botão de compar agora, é desabilitado caso o produto não esteja em estoque -->
                     <button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5 mt-3" style="background-color:#FFA41C; color:black; width: 200px;" type="submit">Comprar agora</button>
                     <br>
                     <br>
