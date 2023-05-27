@@ -178,6 +178,22 @@ class manipular_dados extends conexao{
         
     }
 
+    // Retorna todos os produtos ordenado pela a quantidade de estrelas do maior para o menor e com quantidade de estoque maior que 0
+    public function getProdutosOrderByEstrelas(){
+
+        $this->sql = "SELECT * FROM tb_produtos WHERE qtd > 0 ORDER BY estrelas DESC;";
+        $this->qr = self::exeSQL($this->sql);
+
+        $listaresp = array();
+
+        while($row = @mysqli_fetch_assoc($this->qr)){
+            array_push($listaresp, $row);
+        }
+        
+        return $listaresp;
+        
+    }
+
 }
     
 ?>
