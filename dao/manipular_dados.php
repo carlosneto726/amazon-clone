@@ -155,6 +155,21 @@ class manipular_dados extends conexao{
         return $listaresp;
     }
 
+    // Retorna o usuário com o email cadastrado
+    public function getUsuarioByEmail($email){
+
+        $this->sql = "SELECT * FROM tb_usuarios WHERE id = '".self::getIdByEmail($email)[0]['id']."'";
+        $this->qr = self::exeSQL($this->sql);
+        
+        $listaresp = array();
+
+        while($row = @mysqli_fetch_assoc($this->qr)){
+            array_push($listaresp, $row);
+        }
+        
+        return $listaresp;
+    }
+
     // Atualizando a quantidade de produtos no banco de dados
     public function updateProduto($id, $qtd){
         $this->sql = "UPDATE tb_produtos SET qtd = '".$qtd."' WHERE id = $id ;";
