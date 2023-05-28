@@ -60,7 +60,7 @@ $isset = IsSet($_COOKIE['email']);
 
 
             <div class="nav-item ms-2">
-                <a class="nav-link fw-bold" aria-current="page" href="#">Pedidos</a>
+                <a class="nav-link fw-bold" aria-current="page" href="?secao=pedidos">Pedidos</a>
             </div>
 
             <div class="nav-item ms-2">
