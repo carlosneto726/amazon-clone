@@ -209,6 +209,39 @@ class manipular_dados extends conexao{
         
     }
 
+    // Retorna a lista de todos os pedidos do usuario que foi passado o id
+    public function getVendasByUsuarioId($id){
+
+        $this->sql = "SELECT * FROM tb_vendas WHERE id_usuario = $id ORDER BY id DESC;";
+        $this->qr = self::exeSQL($this->sql);
+
+        $listaresp = array();
+
+        while($row = @mysqli_fetch_assoc($this->qr)){
+            array_push($listaresp, $row);
+        }
+        
+        return $listaresp;
+        
+    }
+
+
+    //
+    public function getProdutosByVendaId($id){
+
+        $this->sql = "SELECT * FROM tb_itens_venda WHERE id_venda = $id;";
+        $this->qr = self::exeSQL($this->sql);
+
+        $listaresp = array();
+
+        while($row = @mysqli_fetch_assoc($this->qr)){
+            array_push($listaresp, $row);
+        }
+        
+        return $listaresp;
+        
+    }
+
 }
     
 ?>
