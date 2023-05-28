@@ -59,7 +59,7 @@
 
                         <br>
 
-                        <h6 class="card-subtitle mb-2 text-body-secondary"><?= $produto['preco']?></h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">R$ <?= number_format($produto['preco'],2,",",".")?></h6>
                         <p class="card-text text-truncate"><?= $produto['descricao']?></p>
                     </a>
                 </div>
