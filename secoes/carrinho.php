@@ -59,7 +59,7 @@
 
     <!-- Botão de fechar o pedido -->
     <div class="ms-2 me-2 p-3" style="border:solid 1px #D5D9D9; width: 300px; height: 150px; background-color: white;">
-        <!-- Formulário para contabilizar a compra do carrinho -->
+        <!-- Formulário para contabilizar a compra do carrinho e gerar o boleto da compra -->
         <form action="adm/carrinho/contabilizar_compra.php" method="POST">
             <p class="fs-5">Subtotal (<?= count($produtos_carrinho) ?> item): <span class="fw-bold">R$ <?= number_format($valor_total,2,",",".") ?> </span></p>
 
