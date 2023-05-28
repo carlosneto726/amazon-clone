@@ -64,9 +64,15 @@ body{
     height: 680px !important;
     width: 100% !important;
 }
+#imagem_produto_pedidos{
+    object-fit: contain;
+    width:  100px !important;
+    height: 100px !important;
+}
 
 
-input[type="file"] {
+
+#qtd{
     display: none;
 }
 
@@ -84,10 +90,6 @@ input[type="file"] {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
-
-
-
 
 
 .grid-container {
