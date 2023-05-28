@@ -176,6 +176,12 @@ class manipular_dados extends conexao{
         $this->qr = self::exeSQL($this->sql);
     }
 
+    // Atualiza a quantidade de produtos no carrinho
+    public function updateProdutoCarrinho($id, $qtd){
+        $this->sql = "UPDATE tb_carrinho SET qtd = '".$qtd."' WHERE id = $id ;";
+        $this->qr = self::exeSQL($this->sql);
+    }
+
 
     // Retorna uma lista de produtos com o nome especificado
     public function getPesquisa($str){
