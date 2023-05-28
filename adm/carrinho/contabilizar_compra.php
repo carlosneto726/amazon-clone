@@ -1,4 +1,13 @@
 <?php
+
+// ============================================== Parte do fpdf que o Pedro irá implementar ==============================================
+require "../../fpdf185/fpdf.php";
+$pdf = new FPDF("L","pt","A4");
+$pdf->AddPage();
+$pdf->Output("I", "boleto.pdf", true);
+// =======================================================================================================================================
+
+
 include_once("../../dao/manipular_dados.php");
 
 // Informações do formulário
@@ -36,11 +45,4 @@ foreach($tb_carrinho->getCarrinho($id_usuario) as $produto_carrinho){
 
 // Deletando todos os produtos do carrinho
 $tb_carrinho->dellAllProdutosCarrinho($id_usuario);
-
-
-
-// Voltando para a seção home
-header("Location: ../../?secao=home");
-exit();
-
 ?>
