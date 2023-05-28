@@ -57,7 +57,28 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
                 <div class="mt-2 ms-2 mb-3">
                     <span class="fs-4"><?php if($produto[0]['qtd'] > 0){echo "<span class='text-success'>Em estoque</span>";}else{echo "<span class='text-danger'>Indisponivel</span>";}?></span>
                     <br><br>
-                    Quantidade: <input type="number" style="width: 75px;" name="qtd" value="1">
+
+                    <div class="hstack">
+                        <span>Quantidade:</span>
+                        <select class="btn border border-1 border-dark-subtle dropdown-toggle ms-1" name="qtd">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+
+                    <script>
+                        function changeqtd(numero){
+                            document.getElementById("qtd-button").innerHTML = numero.innerHTML;
+                            document.getElementById("qtd").value = numero.innerHTML;
+                        }
+                    </script>
 
                     <input name="id_produto" value="<?= $produto[0]['id'] ?>" hidden>
 
