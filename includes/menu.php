@@ -43,30 +43,44 @@ $isset = IsSet($_COOKIE['email']);
             include_once("dao/manipular_dados.php");
 
             $manipula = new manipular_dados();
+            // Caso o usuario logado seja o adm@adm
+            if(@$_COOKIE['email'] == "adm@adm"){?>
+                <div class="dropdown nav-item ms-2">
+                    <a class="nav-link fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo "Olá ". $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="adm/crud_produtos/administrador.php">Administração de produtos</a></li>
+                        <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
+                    </ul>
+                </div>
+            <?php
+
+            
+            }else if($isset){ 
             // Caso o usuario esteja logado, irá aparecer o dropdown com os botões
-            if($isset){?>
+            ?>
+
+                <div class="dropdown nav-item ms-2">
+                    <a class="nav-link fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo "Olá ". $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Sua conta</a></li>
+                        <li><a class="dropdown-item" href="?secao=pedidos">Seus pedidos</a></li>
+                        <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
+                    </ul>
+                </div>
 
 
-            <div class="dropdown nav-item ms-2">
-                <a class="nav-link fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo "Olá ".   $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome']    ?>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Sua conta</a></li>
-                    <li><a class="dropdown-item" href="?secao=pedidos">Seus pedidos</a></li>
-                    <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
-                </ul>
-            </div>
+                <div class="nav-item ms-2">
+                    <a class="nav-link fw-bold" aria-current="page" href="?secao=pedidos">Pedidos</a>
+                </div>
 
-
-            <div class="nav-item ms-2">
-                <a class="nav-link fw-bold" aria-current="page" href="?secao=pedidos">Pedidos</a>
-            </div>
-
-            <div class="nav-item ms-2">
-                <a class="nav-link fw-bold" aria-current="page" href="?secao=carrinho"><img src="img/icons/cart.svg"> Carrinho</a>
-            </div>
-
+                <div class="nav-item ms-2">
+                    <a class="nav-link fw-bold" aria-current="page" href="?secao=carrinho"><img src="img/icons/cart.svg"> Carrinho</a>
+                </div>
+                                
             <?php
             // Caso não aparecerá apenas o botão de login
             }else{ ?>

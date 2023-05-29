@@ -17,8 +17,6 @@
 </head>
 <body id="body">
 
-
-
     <nav class="fixed-top">
         <!-- Navbar superior, a navbar que contem a barra de pesquisa e a logo do produto -->
         <div class="navbar navbar-expand-lg" style="height: 60px;">
@@ -30,15 +28,12 @@
         </div>
     </nav>
 
-
-
     <section>        
         <?php
         $redirecionar = new verUrl;
         $redirecionar->trocarUrl(@$_GET['secao']);
         ?>
     </section>
-
 
     <footer id="rodape">
         <?php include("includes/rodape.php");?>
