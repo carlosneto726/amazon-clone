@@ -104,6 +104,43 @@
     ?>
 
 
+    <!-- Botão que jsAlert que avisa quando um produto é adicionado ao carrinho -->
+    <?php if(@$_SESSION['message_alertJs'] != ""){?>
+        <div class="position-fixed bottom-0 end-0 z-1 m-5">
+            <div id="liveAlertPlaceholder"></div>
+        </div>
+    <?php }?>
+    
 
+
+    <script>
+        // Script que faz aparecer um jsAlert toda vez que um produto é adicionado ao carrinho
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `   <div>${message}</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+        }
+
+        // Variaveis que são passadas pelo o arquivo adm/carrinho/adicionar_carrinho.php
+        var mensagem = "<?php echo @$_SESSION['message_alertJs']; ?>";
+        var tipo = "<?php echo @$_SESSION['type_alertJs']; ?>";
+
+        appendAlert(mensagem, tipo)
+
+    </script>
     
 </div>
+
+
+<?php 
+// Limpando as variáveis globais
+$_SESSION['message_alertJs'] = ""; 
+$_SESSION['type_alertJs'] = ""; 
+?>
