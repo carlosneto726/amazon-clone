@@ -15,8 +15,13 @@ $manipula->setFields("id_usuario,id_produto,qtd");
 $manipula->setDados("'$id_usuario','$id_produto','$qtd'");
 $manipula->insert();
 
+$_SESSION['message_alertJs'] = "Produto adicionado ao <a href='?secao=carrinho'>carrinho</a>";
+$_SESSION['type_alertJs'] = "success";
+
 // Voltando para  apagina do carrinho
-header("Location: ../../?secao=carrinho");
+header("Location: ../../?secao=home");
 exit();
+
+
 
 ?>
