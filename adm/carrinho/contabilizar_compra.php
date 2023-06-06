@@ -52,7 +52,7 @@ foreach($produtos_carrinho as $produto_carrinho){
     
 
     $pdf->SetFont("Times", "", 14);
-    $nomeProduto = $produto[0]['titulo'];
+    $nomeProduto = utf8_decode($produto[0]['titulo']);
 
     $valorProduto = "R$ ".utf8_decode(number_format( $produto[0]['preco'],2,",","."));
     
