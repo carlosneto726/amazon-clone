@@ -170,6 +170,21 @@ class manipular_dados extends conexao{
         return $listaresp;
     }
 
+    // Retorna os usuários de acordo com o id do usuario na compra
+    public function getUsuarioById($id){
+
+        $this->sql = "SELECT * FROM tb_usuarios WHERE id = $id";
+        $this->qr = self::exeSQL($this->sql);
+        
+        $listaresp = array();
+
+        while($row = @mysqli_fetch_assoc($this->qr)){
+            array_push($listaresp, $row);
+        }
+        
+        return $listaresp;
+    }
+
     // Atualizando a quantidade de produtos no banco de dados
     public function updateProduto($id, $qtd){
         $this->sql = "UPDATE tb_produtos SET qtd = '".$qtd."' WHERE id = $id ;";
@@ -247,6 +262,8 @@ class manipular_dados extends conexao{
         return $listaresp;
         
     }
+
+	
 
 }
     
