@@ -50,7 +50,8 @@ $isset = IsSet($_COOKIE['email']);
                         <?php echo "Olá ". $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="adm/crud_produtos/administrador.php">Administração de produtos</a></li>
+                        <li><a class="dropdown-item" href="?secao=home">Menu</a></li>
+                        <li><a class="dropdown-item" href="?secao=administrar">Administração de produtos</a></li>
                         <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                     </ul>
                 </div>
