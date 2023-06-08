@@ -43,6 +43,18 @@ class manipular_dados extends conexao{
         }
     }
 
+    // função para excluir itens da tabela produtos
+    public function delete($id){
+        $this->sql = "DELETE FROM tb_produtos WHERE id = '".$id."'";
+        $this->qr = self::exeSQL($this->sql);
+    }
+
+    // função para atualizar itens da tabela produtos
+    public function update($id_loja, $titulo, $descricao, $estrelas, $marca, $preco, $categoria, $qtd, $url_local){
+        $this->sql = "UPDATE tb_produtos SET id_loja ='".$id_loja."' ,descricao = '".$descricao."',estrelas = '".$estrelas."',marca = '".$marca."',preco = '".$preco."',categoria = '".$categoria."',qtd = '".$qtd."',img_url = '".$url_local."' WHERE $id = id ";
+        $this->qr = self::exeSQL($this->sql);
+    }
+
     // Retorna uma lista com todos os item da tabela definica pelo setTable('tabela')
     public function getAllDataTable(){
         $this->sql = "SELECT * FROM $this->table;";
@@ -263,7 +275,6 @@ class manipular_dados extends conexao{
         
     }
 
-	
 
 }
     
