@@ -83,13 +83,31 @@
                     foreach($produtos->getProdutosPorCategoria($categoria['nome']) as $produto){
                 ?>
                 
-                    <div class='img' style='max-width: 270px; max-height: 200px; width: auto; height: auto;'>
-                        <a href="?secao=produto&produtoid=<?= $produto['id']?>&produtocategoria=<?= $produto['categoria']?>"><img src="<?= $produto['img_url'] ?>" id="imagem_produto"></a>
+                    <div class='img card ' style='max-width: 270px; max-height: 200px; width: auto; height: auto;'>
+                        <img src="<?= $produto['img_url'] ?>" id="imagem_produto" class="card-img" ">
+                            <div class="card-img-overlay">
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><Em>Edit</Em></button>
+
+                                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="10" style="width: 70%;" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                                <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                <p>Try scrolling the rest of the page to see this option in action.</p>
+                                </div>
+                                </div>
+                            </div>
                     </div>
 
-                <?php }
+                <?php 
+                    }
                 ?>
 
+                        
+       
+
+                                          
             </div>
         </div>
 
