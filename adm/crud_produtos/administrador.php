@@ -41,6 +41,7 @@
         exit();
 
     }if($acao == "Atualizar"){
+        
         $id_loja =  $_POST["id_loja"];
         $titulo =  $_POST["titulo"];
         $descricao =  $_POST["descricao"];
@@ -49,6 +50,7 @@
         $preco =  $_POST["preco"];
         $categoria =  $_POST["categoria"];
         $qtd = $_POST["qtd"];
+        $id =  $_POST["id"];
         $nome_arquivo =  $_FILES["img_url"]['name'];
         if(!empty($nome_arquivo)) {
             $url_local = "img/produtos/".$nome_arquivo;
@@ -56,7 +58,7 @@
             move_uploaded_file($_FILES['img_url']['tmp_name'], $url_local_salvo);
         }
         $update = new manipular_dados();
-        $update->update($id_loja, $titulo, $descricao, $estrelas, $marca, $preco, $categoria, $qtd, $url_local);
+        $update->update($id_loja, $titulo, $descricao, $estrelas, $marca, $preco, $categoria, $qtd,  $url_local, $id);
 
         $_SESSION["alerta"] = "<script>alert('Atualizado com Sucesso!')</script>";
 

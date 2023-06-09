@@ -50,8 +50,8 @@ class manipular_dados extends conexao{
     }
 
     // função para atualizar itens da tabela produtos
-    public function update($id_loja, $titulo, $descricao, $estrelas, $marca, $preco, $categoria, $qtd, $url_local){
-        $this->sql = "UPDATE tb_produtos SET id_loja ='".$id_loja."' ,descricao = '".$descricao."',estrelas = '".$estrelas."',marca = '".$marca."',preco = '".$preco."',categoria = '".$categoria."',qtd = '".$qtd."',img_url = '".$url_local."' WHERE $id = id ";
+    public function update($id_loja, $titulo, $descricao, $estrelas, $marca, $preco, $categoria, $qtd,  $url_local, $id){
+        $this->sql = "UPDATE tb_produtos SET id_loja ='".$id_loja."',titulo = '".$titulo."' ,descricao = '".$descricao."',estrelas = '".$estrelas."',marca = '".$marca."',preco = '".$preco."',categoria = '".$categoria."',qtd = '".$qtd."' ,img_url = '".$url_local."' WHERE $id = id ";
         $this->qr = self::exeSQL($this->sql);
     }
 
