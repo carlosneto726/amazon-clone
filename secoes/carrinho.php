@@ -1,5 +1,5 @@
-<div class="hstack">
-    <div class="carrinho">
+<div class="hstack" >
+    <div class="carrinho" style="padding: 20px; max-width: 100%; min-width: 10%;">
     
         <h1>Carrinho de compras</h1>
         <p align="right">Preço</p>
@@ -20,10 +20,12 @@
             $produto = $manipula->getProdutosPorID($produto_carrinho['id_produto']);
             ?>
 
-            <div class="produtos-carrinho hstack gap-3" style="padding: 20px;">
+            <div class="produtos-carrinho hstack gap-3" style=" ">
                 <!-- Imagem do produto -->
                 <img src="<?= $produto[0]['img_url'] ?>" style="width: 205px;">
-                <div class="p-2" style="">
+                <div class="" style="">
+
+                    <div class="d-none d-sm-block d-md-none" style="margin-top: -200px;">R$ <?= number_format($produto[0]['preco'],2,",",".") ?> </div>
                     <!-- Link para o produto -->
                     <a class="text-decoration-none text-primary-emphasis" href="?secao=produto&produtoid=<?= $produto[0]['id']?>&produtocategoria=<?= $produto[0]['categoria']?>"> <?= $produto[0]['titulo'] ?> </a>
                     <br>
@@ -58,11 +60,14 @@
                         <div class="vr"></div>
                         <!-- Botão para excluir o produto -->
                         <a class="text-decoration-none text-primary-emphasis" href="adm/carrinho/excluir_produto_carrinho.php?id=<?=$produto_carrinho['id']?>" class="p-2">Excluir</a>
+                        
                     </div>
                 </div>
 
                 <!-- Preço do produto -->
-                <div class="ms-auto fw-bold" style="margin-top: -200px;">R$ <?= number_format($produto[0]['preco'],2,",",".") ?> </div>
+                <div class="ms-auto fw-bold d-block d--none" style="margin-top: -200px;">R$ <?= number_format($produto[0]['preco'],2,",",".") ?> </div>
+
+                
             </div>
             <hr>
 
@@ -81,7 +86,7 @@
 
 
     <!-- Botão de fechar o pedido -->
-    <div class="ms-2 me-2 p-3" style="border:solid 1px #D5D9D9; width: 300px; height: 150px; background-color: white;">            
+    <div class="ms-2 me-2 p-3 d-none d-xl-block" style="border:solid 1px #D5D9D9; width: 300px; height: 150px; background-color: white;">            
         <p class="fs-5">Subtotal (<?= count($produtos_carrinho) ?> item): <span class="fw-bold">R$ <?= number_format($valor_total,2,",",".") ?> </span></p>
 
         <form action="adm/carrinho/contabilizar_compra.php" method="POST">
@@ -94,4 +99,22 @@
         </form>
     
     </div>
+
+    
+
 </div>
+<center>
+    <div class="ms-2 me-2 p-3 d-block d-xl-none " style="border:solid 1px #D5D9D9; width: 300px; height: 150px; background-color: white;">            
+            <p class="fs-5">Subtotal (<?= count($produtos_carrinho) ?> item): <span class="fw-bold">R$ <?= number_format($valor_total,2,",",".") ?> </span></p>
+
+            <form action="adm/carrinho/contabilizar_compra.php" method="POST">
+                <!-- Informações escondidas (hidden) para o POST id do usuário e valor total -->
+                <input type="text" value="<?= $manipula->getIdByEmail($_COOKIE['email'])[0]['id'] ?>" name="id" hidden>
+                <input type="text" name="valor_total" value="<?= $valor_total ?>" hidden>
+                <center>
+                    <button class="btn btn rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Fechar pedido</button>
+                </center>
+            </form>
+        
+    </div>
+</center>

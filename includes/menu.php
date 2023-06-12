@@ -6,22 +6,22 @@ $isset = IsSet($_COOKIE['email']);
 
 ?>
 
-<div class="container-fluid">
+<div class="navbar container-fluid" >
     <a class="navbar-brand p-2" href="?secao=home"><img src="img/amazon_logo.svg" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width:100%">
+        <div class="navbar-nav me-auto mb-2 mb-lg-0" style="width:100%">
 
-            <div class="nav-item me-2">
-                <a class="nav-link fw-bold" href="#"><img class="mb-1 me-1" src="img/icons/geo.svg">Selecione o endereço</a>
+            <div class="nav-item me-2 d-none d-md-none  d-xxl-block">
+                <a class="nav-link fw-bold text-truncate" href="#"><img class="mb-1 me-1" src="img/icons/geo.svg">Selecione o endereço</a>
             </div>
 
 
-            <div class="nav-item">
+            <div class="nav-item" style="width:73%">
                 <div class="input-group">
-                <form class="d-flex" role="search" action="?secao=pesquisa" method="POST">
+                <form class="d-flex" role="search" action="?secao=pesquisa" method="POST " style="width:100%">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Todos
@@ -33,7 +33,7 @@ $isset = IsSet($_COOKIE['email']);
                         </ul>
                     </div>
 
-                    <input class="form-control" style="width:1045px;" type="search" placeholder="Pesquisa AmazonClone.com.br" aria-label="Search" name="pesquisa">
+                    <input class="form-control" style="width:100%" type="search" placeholder="Pesquisa AmazonClone.com.br" aria-label="Search" name="pesquisa">
                     <button class="btn btn" style="background-color:#FEBD69;color:black;" type="submit"><img src="img/icons/search.svg"></button>
                 </form>
                 </div>
@@ -78,8 +78,8 @@ $isset = IsSet($_COOKIE['email']);
                     <a class="nav-link fw-bold" aria-current="page" href="?secao=pedidos">Pedidos</a>
                 </div>
 
-                <div class="nav-item ms-2">
-                    <a class="nav-link fw-bold" aria-current="page" href="?secao=carrinho"><img src="img/icons/cart.svg"> Carrinho</a>
+                <div class="nav-item ms-2  ">
+                    <a class="nav-link fw-bold text-truncate" aria-current="page" href="?secao=carrinho"><img src="img/icons/cart.svg"> Carrinho</a>
                 </div>
                                 
             <?php
@@ -96,7 +96,7 @@ $isset = IsSet($_COOKIE['email']);
                 </div>
 
                 <div class="nav-item ms-2">
-                    <a class="nav-link fw-bold" aria-current="page" href="adm/login/login.php"><img src="img/icons/cart.svg"> Carrinho</a>
+                    <a class="nav-link fw-bold text-truncate" aria-current="page" href="adm/login/login.php"><img src="img/icons/cart.svg"> Carrinho</a>
                 </div>
 
             <?php } ?>

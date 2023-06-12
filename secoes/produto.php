@@ -15,15 +15,15 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
 </script>
 
 
-<div class="produtos" style="margin-top: 150px; margin: 200px;">
+<div class="container-fluid" style="margin-top: 150px;  ">
     <!-- O hstack posiciona os elementos horizontalmente, como se fosse um dispay inline -->
-    <div class="hstack gap-3">
-        <div class="ms-2 me-2" style="max-width: 680px; max-height: 680px;">
+    <div class="hstack gap-3" style="width:80%; margin-left:11%;">
+        <div class="ms-2 me-2" style="max-width: 100%; min-width: 40%;">
             <img src="<?= $produto[0]['img_url'] ?>" id="imagem_produto_pagina">
         </div>
         
         <!-- Div para o produto -->
-        <div class="p-2">
+        <div class="p-2" style="max-width: 100%; min-width: 30%;">
             <h5 class="fw-bold"><?= $produto[0]['titulo']?></h5>
             <br>
             Marca: <?= $produto[0]['marca']?>
@@ -32,24 +32,35 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
             <hr>
             R$<span class="fs-4 fw-bold"><?= number_format($produto[0]['preco'],2,",",".");?></span>
             <br>
-            <img src="img/produto_placeholder.png" class="w-100">
+            <img class="d-none d-md-none  d-xxl-block" src="img/produto_placeholder.png" class="w-100">
             <br>
-            <span class="fw-bold">Marca</span>                          <span style="margin-left: 215px;"><?= $produto[0]['marca']?></span><br>
-            <span class="fw-bold">Cor</span>                            <span style="margin-left: 235px;">??</span><br>
-            <span class="fw-bold">Tecnologia de conexão</span>          <span style="margin-left: 90px;">??</span><br>
-            <span class="fw-bold">Material</span>                       <span style="margin-left: 200px;">??</span><br>
-            <span class="fw-bold">Usos específicos do produto</span>    <span style="margin-left: 50px;">??</span><br>
+            <div class="d-none d-xxl-block">
+                <span class="fw-bold d-none d-xxl-block">Marca</span>                          <span style="margin-left: 215px;"><?= $produto[0]['marca']?></span><br>
+                <span class="fw-bold ">Cor</span>                            <span style="margin-left: 235px;">??</span><br>
+                <span class="fw-bold">Tecnologia de conexão</span>          <span style="margin-left: 90px;">??</span><br>
+                <span class="fw-bold">Material</span>                       <span style="margin-left: 200px;">??</span><br>
+                <span class="fw-bold">Usos específicos do produto</span>    <span style="margin-left: 50px;">??</span><br>
+            </div>
             <hr>
             <br>
             <span class="fw-bold">Sobre este item</span>
             <br>
-            <p class="text-break" style="max-width: 500px;">
+            <p class="text-break text-truncate" style="max-width: 500px;">
                 <?= $produto[0]['descricao']?>
             </p>
-        </div>
+            <div class="d-block d-xl-none ">
+                <form action="adm/carrinho/adicionar_carrinho.php" method="POST">
+                    <input name="id_produto" value="<?= $produto[0]['id'] ?>" hidden>
+            <!-- Botão de adicionar ao carrinho, é desabilitado caso o produto não esteja em estoque -->
+                    <p><button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button></p>
+                        <!-- Botão de comprar agora, é desabilitado caso o produto não esteja em estoque -->
+                    <p><button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5 mt-3" style="background-color:#FFA41C; color:black; width: 200px;" type="submit">Comprar agora</button></p>
+                </form>
+            </div>
+        </div> 
 
         <!-- Card mais a direita com os botões de adicionar produto ao carrinho e comprar -->
-        <div class="ms-2 me-2 rounded-2" style="border:solid 1px #D5D9D9; width: 245px; height: 530px;">
+        <div class="ms-2 me-2 rounded-2 d-none d-xxl-block" style="border:solid 1px #D5D9D9; width: 245px; height: 530px;">
             <form action="adm/carrinho/adicionar_carrinho.php" method="POST">
 
                 <div class="mt-2 ms-2">R$<span class="fs-5 fw-bold"><?= number_format($produto[0]['preco'],2,",",".");?></span></div>
@@ -88,7 +99,7 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
                 <center>
                     <!-- Botão de adicionar ao carrinho, é desabilitado caso o produto não esteja em estoque -->
                     <button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button>
-                    <!-- Botão de compar agora, é desabilitado caso o produto não esteja em estoque -->
+                    <!-- Botão de comprar agora, é desabilitado caso o produto não esteja em estoque -->
                     <button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5 mt-3" style="background-color:#FFA41C; color:black; width: 200px;" type="submit">Comprar agora</button>
                     <br>
                     <br>
@@ -100,11 +111,12 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
     </div>
 
     <!-- Horizontal Rule (Linha vertical para separar a seção do produto com a listagem de produtos relacionados) -->
-    <hr style="width:1465px;">
-
+    <hr style="width:80%; margin-left:11%;"/>
+    <br/>
     <!-- Listagem de produtos relacionados -->
-    <h4 class="fw-bold mt-2 ms-2">Produtos relacionados</h4>
-        <div class="grid-container-categoria">
+    <div style="width:80%; margin-left:11%;"><h4 class="fw-bold mt-2 ms-2">Produtos relacionados</h4></div>
+    <div class="container-fluid" style="width:80%; margin-left:11%;">
+        <div class="row">
             <?php 
 
                 $produtos = new manipular_dados();
@@ -112,12 +124,12 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
                 foreach($produtos->getProdutosPorCategoria($_GET['produtocategoria']) as $produto){
             ?>
             
-                <div class='img' style='max-width: 270px; max-height: 200px; width: auto; height: auto;'>
+                <div class='img cols' style='max-width: 240px; max-height: 200px; width: auto; height: auto;'>
                     <a href="?secao=produto&produtoid=<?= $produto['id']?>&produtocategoria=<?= $produto['categoria']?>"><img src="<?= $produto['img_url'] ?>" id="imagem_produto"></a>
                 </div>
 
             <?php }
             ?>
-
         </div>
+    </div>
 </div>

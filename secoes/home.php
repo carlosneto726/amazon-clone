@@ -1,22 +1,22 @@
 
 <div>
     <!-- Carousel -->
-    <div id="carouselExampleCaptions" class="z-n1 position-absolute carousel slide fixed-top" style="margin-top:100px;">
+    <div id="carouselExampleCaptions" class="z-n1 position-absolute carousel slide fixed-top" style="margin-top:100px; width: 100%;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <center><img src="img/carousel/img2.jpg" class="d-block" style="width:1500px; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
+                <center><img src="img/carousel/img2.jpg" class="d-block" style="width: 80%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
             </div>
             <div class="carousel-item">
-                <center><img src="img/carousel/img1.jpg" class="d-block" style="width:1500px; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
+                <center><img src="img/carousel/img1.jpg" class="d-block" style="width:80%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
             </div>
             <div class="carousel-item">
-                <center><img src="img/carousel/img3.jpg" class="d-block" style="width:1500px; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
+                <center><img src="img/carousel/img3.jpg" class="d-block" style="width:80%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
             </div>
             <div class="carousel-item">
-                <center><img src="img/carousel/img4.jpg" class="d-block" style="width:1500px; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
+                <center><img src="img/carousel/img4.jpg" class="d-block" style="width:80%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
             </div>
             <div class="carousel-item">
-                <center><img src="img/carousel/img5.jpg" class="d-block" style="width:1500px; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
+                <center><img src="img/carousel/img5.jpg" class="d-block" style="width:80%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);"></center>
             </div>
         </div>
 
@@ -32,7 +32,8 @@
 
 
     <!-- Os produtos com as maiores estrelas -->
-    <div class="grid-container">
+    <div class="container-fluid" style="width: 80%; margin-left: 11% ; margin-top: 19%; ">
+        <div class="row">
         <?php 
             $i = 0;
             $consulta = new manipular_dados();
@@ -47,7 +48,7 @@
                 
         ?>
 
-            <div class='card border-light rounded-0' style='width: 350px; height: 420px;'>
+            <div class='col-3 card border-light rounded-0' style='width: 357px; height: 420px; margin-left: 11px; margin-top: 15px;'>
                 <div class='card-body'>
                     <!-- Todo o conteudo do car está em um link para o usuário poder acessar a página do produto -->
                     <a href="?secao=produto&produtoid=<?= $produto['id']?>&produtocategoria=<?= $produto['categoria']?>" class='card-body text-decoration-none'>
@@ -67,7 +68,7 @@
 
         <?php }
         ?>
-
+        </div>
     </div>
 
 
@@ -79,7 +80,7 @@
         foreach($categorias->getAllDataTable() as $categoria){
     ?>
 
-        <div class="categoria" style="max-width: 1460px; width: auto; margin-left: 220px; margin-top: 20px; background-color: white;">
+        <div class="categoria" style="width: 76.9%; margin-left: 11.5% ;background-color: white; margin-top: 15px;">
             <h4 class="fw-bold mt-2 ms-2"><?= $categoria['nome'] ?></h4>
             <div class="produto-categoria">
                 <?php 

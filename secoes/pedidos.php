@@ -3,7 +3,7 @@
     document.getElementById("body").style = "background-color: white;"
 </script>
 
-<div class="mx-auto w-50" style="margin-top:120px;">
+<div style="margin-top:120px; width:80%; margin-left:10%; " >
     <div class="w-100 fs-3"  style="margin-top: 50px;">Seus Pedidos</div><br>
 
     <?php

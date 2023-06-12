@@ -19,7 +19,7 @@
 
     <nav class="fixed-top">
         <!-- Navbar superior, a navbar que contem a barra de pesquisa e a logo do produto -->
-        <div class="navbar navbar-expand-lg" style="height: 60px;">
+        <div class="navbar navbar-expand-lg" style="height: 70px;">
             <?php include("includes/menu.php"); ?>
         </div>
         <!-- Navbar inferior, a navbar que é mais escura e contem algumas listagem de categorias -->
