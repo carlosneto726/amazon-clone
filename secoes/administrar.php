@@ -63,7 +63,8 @@
             </form>
     </div>   
 
-    <div class="grid-container">
+    <div class="container-fluid" style="width: 80%; margin-left: 11% ; ">
+        <div class="row">
         <?php 
             
             $consulta = new manipular_dados();
@@ -72,7 +73,7 @@
 
         ?>
 
-            <div class='card border-light rounded-0' style='width: 350px; height: 420px;'>
+            <div class="col-3 card border-light rounded-0" style="width: 350px; height: 20%; margin-left: 15px; margin-top: 15px;">
                 <div class='card-body'>
                     <!-- Todo o conteudo do car está em um link para o usuário poder acessar a página do produto -->
                    
@@ -157,7 +158,7 @@
 
         <?php }
         ?>
-
+        </div>
     </div>
 
     <!-- Listagem de produtos em organizados por categoria -->
