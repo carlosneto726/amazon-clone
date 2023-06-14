@@ -12,4 +12,5 @@ $manipula->updateProdutoCarrinho($_POST["id"], $_POST["new_qtd"]);
 header("Location: ../../?secao=carrinho");
 exit();
 
+
 ?>
