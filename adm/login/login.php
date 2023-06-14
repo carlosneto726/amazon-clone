@@ -59,7 +59,7 @@
     </center>
 
     <!-- Rodapé -->
-    <img src="../../img/rodape_login.png" alt="">
+    <center><img  style="min-width:30%; max-width:80%;"src="../../img/rodape1_login.png" alt=""></center>
 
 
 </body>

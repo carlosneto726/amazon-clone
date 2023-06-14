@@ -21,7 +21,7 @@ $isset = IsSet($_COOKIE['email']);
 
             <div class="nav-item" style="width:73%">
                 <div class="input-group">
-                <form class="d-flex" role="search" action="?secao=pesquisa" method="POST " style="width:100%">
+                <form class="d-flex" role="search" action="?secao=pesquisa" method="POST" style="width:100%">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Todos
