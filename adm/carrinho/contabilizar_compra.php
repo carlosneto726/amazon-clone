@@ -63,7 +63,7 @@ foreach($produtos_carrinho as $produto_carrinho){
 }
 
 
-$pdf->Image("C:/xampp\htdocs/PW2-amazon-clone/img/CodigoBarras.png", 220, 390, 420, 200);
+$pdf->Image("../../img/CodigoBarras.png", 220, 390, 420, 200);
 
 
 //linhas
