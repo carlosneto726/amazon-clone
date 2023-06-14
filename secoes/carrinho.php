@@ -103,6 +103,8 @@
     
 
 </div>
+
+    <!-- Botão de fechar o pedido no tamanho sm -->
 <center>
     <div class="ms-2 me-2 p-3 d-block d-xl-none " style="border:solid 1px #D5D9D9; width: 300px; height: 150px; background-color: white;">            
             <p class="fs-5">Subtotal (<?= count($produtos_carrinho) ?> item): <span class="fw-bold">R$ <?= number_format($valor_total,2,",",".") ?> </span></p>

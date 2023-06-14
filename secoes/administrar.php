@@ -8,7 +8,7 @@
     <br/><br/><br/><br/><br/>
         <center><h1>Adicione seus Produtos Aqui</h1></center>
     <br/>
-
+    <!-- Formulario para o administrador consiga adicionar produtos-->
     <div class=" container estiloform">
             <form method="POST" class="form-floating" action="adm/crud_produtos/administrador.php" enctype="multipart/form-data" >
                 
@@ -79,7 +79,7 @@
 
             <div class="col-3 card border-light rounded-0" style="width: 350px; height: 20%; margin-left: 15px; margin-top: 15px;">
                 <div class='card-body'>
-                    <!-- Todo o conteudo do car está em um link para o usuário poder acessar a página do produto -->
+                    <!-- Todo o conteudo do card pode ser editado assim permitindo que o administrador consiga fazer alterações nos produtos-->
                    
                         <h5 class="fw-bold" style="font-family: sans-serif !important; color: black;"><?= $produto['titulo']?></h5>
 
@@ -169,7 +169,7 @@
         <center><h1>Todos os produtos separados por categoria para Editar:</h1></center>
     <br/>
 
-    <!-- Listagem de produtos em organizados por categoria -->
+    <!-- Edição dos produtos organizados por categoria -->
     <?php 
         
         $categorias = new manipular_dados();

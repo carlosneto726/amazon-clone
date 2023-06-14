@@ -2,7 +2,8 @@
     include_once("../../dao/manipular_dados.php");
     session_start();
 
-    
+    /* Funções para as operações de adicionar, atualizar e deletar no banco de tados da tabela do Produto */
+
     $acao =  $_POST["acao"];
     if ($acao == "Deletar"){
         $id =  $_POST["id"];

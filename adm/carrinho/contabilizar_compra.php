@@ -8,7 +8,7 @@ $valor_total = $_POST['valor_total'];
 date_default_timezone_set("America/Sao_Paulo");
 $data = date("Y-m-d_H:i");
 
-// ============================================== Parte do fpdf que o Pedro irá implementar ==============================================
+// ============================================== Parte Do FPDF ==============================================
 
 $Ver_Usuario =  new manipular_dados();
 $nome = $Ver_Usuario->getUsuarioById($id_usuario);
