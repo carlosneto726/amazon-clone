@@ -50,6 +50,20 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
             </p>
             <div class="d-block d-xl-none ">
                 <form action="adm/carrinho/adicionar_carrinho.php" method="POST">
+                    <div class="text-truncate">
+                        <span>QTD:</span>
+                        <select class="btn border border-1 border-dark-subtle dropdown-toggle ms-1" name="qtd">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
                     <input name="id_produto" value="<?= $produto[0]['id'] ?>" hidden>
             <!-- Botão de adicionar ao carrinho, é desabilitado caso o produto não esteja em estoque -->
                     <p><button class="btn btn <?php if($produto[0]['qtd'] <= 0){echo "disabled";}?> rounded-5" style="background-color:#FFD814; color:black; width: 200px;" type="submit">Adicionar ao carrinho</button></p>
@@ -60,9 +74,9 @@ $produto = $manipula->getProdutosPorID($_GET['produtoid']);
         </div> 
 
         <!-- Card mais a direita com os botões de adicionar produto ao carrinho e comprar -->
-        <div class="ms-2 me-2 rounded-2 d-none d-xxl-block" style="border:solid 1px #D5D9D9; width: 245px; height: 530px;">
+        <div class="ms-2 me-2 rounded-2 d-none d-xl-block" style="border:solid 1px #D5D9D9; width: 245px; height: 530px;">
             <form action="adm/carrinho/adicionar_carrinho.php" method="POST">
-
+            
                 <div class="mt-2 ms-2">R$<span class="fs-5 fw-bold"><?= number_format($produto[0]['preco'],2,",",".");?></span></div>
                 <div class="mt-2 ms-2"><span class="fs-6">Entrega R$ 23,51: 18 - 23 de Maio.</span></div>
                 <div class="mt-2 ms-2 mb-3">
