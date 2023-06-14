@@ -7,13 +7,13 @@
 ?>
 
 
-<h5 style="margin-top: 120px; margin-left:420px;">Exibindo resultados para '<span class="fw-bold"><?= $pesquisa ?></span>'.</h5>
-<h4 class="fw-bold" style="margin-left:420px;">Resultados</h4>
+<h5 class="text-truncate" style="margin-top: 120px; margin-left:20%;">Exibindo resultados para '<span class="fw-bold"><?= $pesquisa ?></span>'.</h5>
+<h4 class="fw-bold text-truncate" style="margin-left:20%;">Resultados</h4>
 
 
 <div class="hstack">
     <!-- Sidenav -->
-    <div style="width:420px; height: 100%;">
+    <div class="d-none d-md-none  d-xxl-block" style="width:420px; height: 100%;">
         <p style="margin-left: 60px;">
             <span class="fw-bold">Avaliação do Cliente</span> <br>
                 <!-- 1 estrela e acima -->
@@ -37,7 +37,8 @@
         </p>
     </div>
 
-    <div class="grid-container-pesquisa" >
+    <div class="container-fluid" style="width: 80%; margin-left: 11% ; ">
+        <div class="row">
 
     <!-- Listagem dos produtos contendo a pesquisa -->
     <?php
@@ -45,7 +46,7 @@
             ?>  
 
             <!-- Card dos produtos -->
-            <div class='card border-light rounded-0' style='width: 350px; height: 420px;'>
+            <div class='col-2 card border-light rounded-0' style='width: 340px; height: 420px;'>
                 <!-- O card inteiro está dentro da tag <a> para redirecionar o usuario para a pagina do produto -->
                 <a href="?secao=produto&produtoid=<?= $produto['id']?>&produtocategoria=<?= $produto['categoria']?>" class='card-body text-decoration-none'>
 

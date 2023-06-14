@@ -22,10 +22,10 @@
 
             <div class="produtos-carrinho hstack gap-3" style=" ">
                 <!-- Imagem do produto -->
-                <img src="<?= $produto[0]['img_url'] ?>" style="width: 205px;">
+                <img src="<?= $produto[0]['img_url'] ?>" style="width:20%; ">
                 <div class="" style="">
 
-                    <div class="d-none d-sm-block d-md-none" style="margin-top: -200px;">R$ <?= number_format($produto[0]['preco'],2,",",".") ?> </div>
+                    
                     <!-- Link para o produto -->
                     <a class="text-decoration-none text-primary-emphasis" href="?secao=produto&produtoid=<?= $produto[0]['id']?>&produtocategoria=<?= $produto[0]['categoria']?>"> <?= $produto[0]['titulo'] ?> </a>
                     <br>
@@ -65,7 +65,7 @@
                 </div>
 
                 <!-- Preço do produto -->
-                <div class="ms-auto fw-bold d-block d--none" style="margin-top: -200px;">R$ <?= number_format($produto[0]['preco'],2,",",".") ?> </div>
+                <div class="ms-auto fw-bold" style="margin-top: -20%;">R$ <?= number_format($produto[0]['preco'],2,",",".") ?> </div>
 
                 
             </div>
