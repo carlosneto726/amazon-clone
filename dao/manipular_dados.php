@@ -124,6 +124,15 @@ class manipular_dados extends conexao{
     }
 
 
+    public function validarLoginExistente($email){
+
+        $this->sql = "SELECT * FROM tb_usuarios WHERE email ='$email'";
+        $this->qr = self::exeSQL($this->sql);
+        $linhas = @mysqli_num_rows($this->qr);
+        return $linhas;
+    }
+
+
     // Retorna o carrinho de um id de um usuário especificado
     public function getCarrinho($id){
 
